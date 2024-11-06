@@ -84,6 +84,12 @@ jobs:
     - name: 安装 feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: 再一次更新 feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 再一次安装 feeds
+      run: cd openwrt && ./scripts/feeds install -a
+
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
